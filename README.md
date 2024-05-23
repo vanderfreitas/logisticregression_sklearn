@@ -1,9 +1,16 @@
-We provide a function to compute p-values and confidence intervals to coefficients from sklearn LogistiRegression.
-One example shows a comparison with statsmodels and another does a feature search using RFECV
+# Logistic Regression P-Values and Confidence Intervals
 
-Dependencies:
-- numpy
-- scipy
-- pandas
-- sklearn
-- statsmodels
+We provide a function to compute p-values and confidence intervals for coefficients from `sklearn`'s `LogisticRegression`.
+
+## Examples
+
+- **Comparison with Statsmodels:** One example shows a comparison with `statsmodels`.
+- **Feature Search using RFECV:** Another example performs a feature search using `RFECV`.
+
+## Dependencies
+
+- `numpy`
+- `scipy`
+- `pandas`
+- `sklearn`
+- `statsmodels`
