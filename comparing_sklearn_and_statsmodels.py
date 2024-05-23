@@ -43,7 +43,6 @@ print('STATSMODELS')
 print(result_sm.summary())
 #################################################################
 
-# Ensure the coefficients are aligned
 results = pd.DataFrame({
     'Feature': ['Intercept'] + data.feature_names.tolist()[:n_features],
     'coeff': np.concatenate(([intercept_sk], coefficients_sk)),
