@@ -4,6 +4,7 @@ from scipy.stats import norm
 from sklearn.datasets import load_breast_cancer
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score, precision_recall_fscore_support
 import statsmodels.api as sm
 
 from sklearn_lr_pvalues_and_ci import get_sklearn_lr_pvalues_and_ci
@@ -54,4 +55,27 @@ results = pd.DataFrame({
 })
 
 print('\n\nSKLEARN')
+print(results)
+
+
+
+print('\n\nEvaluate model performance')
+
+y_pred = log_reg_sk.predict(X_scaled)
+#y_pred_proba = log_reg_sk.predict_proba(X_scaled)[:, 1]
+
+# Evaluate the model's performance
+accuracy = accuracy_score(y, y_pred)
+#conf_matrix = confusion_matrix(y, y_pred)
+#class_report = classification_report(y, y_pred)
+precision, recall, fbeta_score, support = precision_recall_fscore_support(y,y_pred)
+#roc_auc = roc_auc_score(y, y_pred_proba)
+
+results = pd.DataFrame(data={
+    'accuracy': [accuracy],
+    'precision': [precision],
+    'recall': [recall],
+    'fbeta_score': [fbeta_score],
+    'support': [support],
+})
 print(results)
